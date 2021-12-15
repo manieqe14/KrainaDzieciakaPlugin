@@ -1,0 +1,34 @@
+.produkty td, .produkty th{
+    border-bottom: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.red{
+    color: red !important;
+}
+
+.categories-list{
+    display: flex;
+    flex-flow: wrap;
+}
+
+.categories-list li{
+    margin: 5px;
+}
+
+.kraina-section{
+    padding: 10px;
+    background: white;
+    margin: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+}
+.kraina-section td{
+    padding: 10px;
+}
+
+.edit-product-link{
+    font-size: 0.8em;
+    text-transform: uppercase;
+    margin-left: 10px;
+}

@@ -1,0 +1,256 @@
+:root{
+    --main-accent: #D99414;
+    --main-text-kraina: #14213d;
+    --main-accent-grey: #A6A6A6;
+    --main-col-opt3: #FACE4B;
+    --main-col-opt2: #F9A23E;
+    --main-col-opt1: #4288A6;
+    --background1: rgba(249, 162, 62, 0.4);
+    --page-background: rgba(0, 0, 0, 0.02);
+}
+
+.btn-remove{
+    color: red !important;
+    background: rgba(255, 0, 0, 0.1) !important;
+}
+
+.widefat td, .widefat th{
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    text-align: center;
+    vertical-align: middle;
+}
+
+table thead tr th{
+    font-weight: 500 !important;
+    font-size: 1em !important;
+    text-transform: uppercase;
+}
+
+.hidden{
+    display: none;
+}
+
+
+.client-info p{
+    line-height: 12px !important;
+    margin-bottom: 5px !important;
+    font-size: 11px !important;
+}
+
+.button{
+    margin: 5px !important;
+}
+
+#urlop-text{
+    width: 100%;
+    min-height: 100px;
+}
+
+.red{
+    background: rgba(255,0,0,0.3);
+}
+.green{
+    background: rgba(0,255,0,0.3);
+}
+
+.kraina-section{
+    padding: 10px;
+    background: white;
+    margin: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    height: fit-content;
+}
+.kraina-section td{
+    padding: 10px;
+}
+
+.reversed-container{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.dispatch-order td, #dispatch-orders-section th, #custom-shipments td, #custom-shipments th{
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+}
+
+.dispatch-order:hover{
+    cursor: pointer;
+}
+
+.categories-list{
+    display: flex;
+    flex-flow: wrap;
+}
+
+.categories-list li{
+    margin: 5px;
+}
+
+.dispatch-select{
+    width: fit-content;
+    
+}
+
+.dispatch-select p{
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+.loading{
+    filter: blur(4px);
+}
+
+li{
+    list-style-type: none;
+}
+
+.disabled-button{
+    cursor: not-allowed !important;
+    opacity: 0.2;
+}
+
+.dispatches-table{ 
+    display: block; 
+    height: 200px; 
+    overflow-y: scroll; 
+    border-collapse: collapse;
+}
+
+input, .button{
+    border-radius: 0 !important;
+}
+
+#chosen-packages-for-dispatch{
+    width: 100%;
+    min-height: 50px;
+}
+
+.row-title, .order-total{
+    font-size: 1.5em !important;
+}
+
+#order-details-window, #new-shipment-popup, #new_size_table_popup{
+    display: none;
+    position: fixed;
+    background: white;
+    border: 2px solid rgba(0,0,0,0.12);
+    z-index: 99;
+    box-shadow: 10px 5px 2000px 2000px rgba(0,0,0, 0.5);
+}
+
+#close-window-icon{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    fill: black;
+    cursor: pointer;
+    transition: transform 0.2 ease-in;
+    z-index: 999;
+    background: white;
+}
+#close-window-icon:hover{
+    transform: scale(1.1);
+}
+
+#items-list{
+    text-align: center;
+    margin: 10px;
+    
+}
+
+#client-data-details, #additional-order-data, #order-summary-window, #items-list{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+}
+
+
+#client-data-details p{
+    margin: 5px 0;
+}
+
+#items-list td{
+    padding: 5px;
+}
+
+#items-list th, .client-data-title{
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.item-name{
+    font-weight: 500;
+}
+
+#dispatch-points td p{
+    margin: 5px;
+}
+
+.settings-wrapper{
+    display: flex;
+}
+
+.settings-wrapper input{
+    width: 300px;
+}
+
+.two-row-setting{
+    display: flex;
+}
+
+.two-row-setting input{
+    width: 200px;
+}
+
+table td{
+    padding: 5px;
+}
+
+.two-row-setting span{
+    width: 100px;
+}
+
+.selected-row{
+    background: rgba(255,0,0,0.2);
+}
+
+.info-content{
+    min-width: 300px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    flex-direction: column;
+    line-height: 2em;
+}
+
+#new-shipment-popup{
+    padding: 20px;
+}
+
+.marked-field{
+    border: 3px solid red;
+}
+
+#custom-shipments{
+    width: 100%;
+    text-align: center;
+}
+
+#dispatch-options{
+    margin: 20px;
+}
+
+#dispatch-options div{
+    margin: 10px;
+}
+
