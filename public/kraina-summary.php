@@ -51,7 +51,7 @@ function invoices_init(){
         if(($hook_suffix != 'kraina-plugins_page_kraina-summary-page') && ($hook_suffix != 'kraina-plugins_page_kraina-urlop-page')&& ($hook_suffix != 'kraina-plugins_page_kraina-settings-page')){
             return;
         }
-        $ver = 1.53;
+        $ver = 1.55;
         
         wp_register_script( 'sizes_tables_script', plugins_url( '/js/size_tables.js', __FILE__ ), array( 'jquery' ), $ver, true );
         wp_enqueue_script( 'size_tables_script' );
@@ -146,7 +146,37 @@ function invoices_init(){
     add_action( 'admin_enqueue_scripts', 'allegro_add_scripts' );
     add_action( 'admin_enqueue_scripts', 'kraina_summary_add_scripts' );
     add_action( 'admin_enqueue_scripts', 'custom_shipments_add_scripts' );
-    
+
+    //fetch orders
+    add_action( 'wp_ajax_fetch_orders', 'fetch_orders' );
+    add_action( 'wp_ajax_nopriv_fetch_orders', 'fetch_orders' );
+
+    function fetch_orders() {
+        global $woocommerce;
+
+        $dates = get_option('kraina_orders_from') . '...' . get_option('kraina_orders_to');
+
+        $filters = array(
+            'post_type' => 'shop_order',
+            'posts_per_page' => '-1',
+            'date_created' => $dates,
+        );
+
+        $loop = new WC_Order_Query($filters);
+        $orders = $loop->get_orders();
+        $orders_array = array();
+        foreach ($orders as $order_id){
+            $order = wc_get_order($order_id);
+            array_push($orders_array, array(
+                    "id" => $order->get_id(),
+                    "status" => $order->get_status(),
+                    "payment_method" => $order->get_payment_method()
+            ));
+        }
+        echo json_encode($orders_array);
+        exit;
+    }
+
     
     //sending mail
     
@@ -425,7 +455,7 @@ function invoices_init(){
     function kraina_summary_render_settings_page(){
         
         $statuses_list = get_statuses_list();
-        $kurier_list = array( 'Kurier InPost', 'Allegro: Allegro Kurier24 InPost pobranie', 'Allegro: Kurier InPost', 'Darmowa wysyłka');
+        $kurier_list = array( 'Kurier InPost', 'Allegro: Allegro Kurier24 InPost pobranie', 'Allegro: Kurier InPost', 'Darmowa wysyłka', 'Allegro: Kurier InPost pobranie');
         
         $inpost_token = get_option('inpost_token');
         
@@ -560,12 +590,12 @@ function invoices_init(){
                                             else if(in_array($order->get_shipping_method(), $kurier_list)){
                                                 echo '<a type="button" class="button" value="Generuj" onclick="kurier_inpost(this)" order-id="' . $order->get_ID() . '">Generuj<br />(Kurier InPost)</a>';
                                             }
-                                            else if($order->get_shipping_method() == 'Allegro: Allegro Kurier DPD'){
+                                            else if(($order->get_shipping_method() == 'Allegro: Allegro Kurier DPD') || ($order->get_shipping_method() == 'Allegro: Allegro Kurier DPD pobranie')){
                                                 echo '<a type="button" class="button" value="Generuj DPD" onclick="kurier_dpd(this)" order-id="' . $order->get_ID() . '">Generuj<br />(DPD)</a>';
                                             }
                                         }
                                     else if(($order->get_status() == 'processing') && (strlen($order->get_meta('package_id')) > 2)){
-                                            if($order->get_shipping_method() == 'Allegro: Allegro Kurier DPD'){
+                                            if(($order->get_shipping_method() == 'Allegro: Allegro Kurier DPD') || ($order->get_shipping_method() == 'Allegro: Allegro Kurier DPD pobranie')){
                                                 if($order->get_meta('dpd_dispatch') != ''){
                                                     echo '<div>Przewidywana data odbioru: ' . $order->get_meta('dpd_dispatch') . '</div>';
                                                 }

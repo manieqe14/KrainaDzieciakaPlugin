@@ -81,7 +81,7 @@ function kraina_produkty_render_settings_page(){
         'post_status' => 'publish',
         'fields' => 'ids',
         'tax_query' => array(
-            'relation' => 'AND',
+            'relation' => 'OR',
             array(
                 'taxonomy' => 'product_cat',
                 'field' => 'slug',
@@ -107,14 +107,14 @@ function kraina_produkty_render_settings_page(){
     <table class="widefat produkty">
         <thead>
             <tr>
-                <th class="row-title">Lp.</th>
-                <th class="row-title">ID</th>
+                <!--<th class="row-title">Lp.</th>-->
+                <!--<th class="row-title">ID</th>-->
                 <th class="row-title">Produkt</th>
                 <th class="row-title">Rozmiary</th>
-                <th class="row-title">Producent</th>
-                <th class="row-title">Rodzaj</th>
-                <th class="row-title">Kolejność</th>
-                <th>data</th>
+                <th class="row-title hidden">Producent</th>
+                <!--<th class="row-title">Rodzaj</th> -->
+                <!--<th class="row-title">Kolejność</th> -->
+                <!--<th>data</th> -->
             </tr>
         </thead>
 
@@ -125,19 +125,21 @@ function kraina_produkty_render_settings_page(){
         $counter = 1;
        foreach ( $all_ids as $id ) {
            $product = wc_get_product($id);
-            echo '<tr style="border-bottom: 1px solid rgba(0,0,0,0.12)"><td>' . $counter . '</td>';
-            echo '<td><a href="' . get_permalink($id) . '">' . $id . '</a></td>';
+            //echo '<tr style="border-bottom: 1px solid rgba(0,0,0,0.12)"><td>' . $counter . '</td>';
+            //echo '<td><a href="' . get_permalink($id) . '">' . $id . '</a></td>';
             if((strlen($product->get_name()) > 50) && ($long_names == '1')){
                 echo '<td class="red">' . $product->get_name();
             }
             else{
                 echo '<td>' . $product->get_name();
             }
-            echo '<a class="edit-product-link" href="/wp-admin/post.php?post=' . $id . '&action=edit">Edytuj</a></td><td>';
+            //echo '<a class="edit-product-link" href="/wp-admin/post.php?post=' . $id . '&action=edit">Edytuj</a></td>';
+            echo '<td>';
             
                   
             if($product->is_type('variable')){
                 $attributes = explode(',', $product->get_attribute('pa_rozmiar'));
+                
                 $stock = array();
                 
                 $variations = $product->get_children();
@@ -151,10 +153,10 @@ function kraina_produkty_render_settings_page(){
                 for($i = 0; $i < count($attributes); $i++){
 
                         if($stock[$i] != 0){
-                                echo '<span>' . str_replace(" ", "", $attributes[$i]) . ' </span>';
+                                echo '<span>[' . str_replace(" ", "", $attributes[$i]) . '<i> - ' . $stock[$i] . 'szt.</i>]</span> ';
                         }
                         else{
-                                echo '<span style="color: red;">' . str_replace(" ", "", $attributes[$i]) . ' </span>';
+                                echo '<span style="color: red;">[' . str_replace(" ", "", $attributes[$i]) . '<i> - ' . $stock[$i] . 'szt.</i>]</span>';
                         }
                     }
         
@@ -163,12 +165,16 @@ function kraina_produkty_render_settings_page(){
                 if($product->get_stock_quantity() == '0'){
                     echo '<span style="color: red">Brak</span>';
                 }
+                else{
+                    echo '<span>' . $product->get_stock_quantity() . 'szt.</span>';
+                }
             }
             echo '</td>';
-            echo '<td>' . $product->get_attribute('pa_producent') . '</td>';
-            echo '<td>' . $product->get_attribute('pa_rodzaj') . '</td>';
-            echo '<td>' . $product->get_menu_order() . '</td>';
-            echo '<td><a class="button" product-id="' . $id . '"onclick="get_product_data_json(this)">get data</a></td></tr>';
+            echo '<td class="hidden">' . $product->get_attribute('pa_producent') . '</td>';
+            //echo '<td>' . $product->get_attribute('pa_rodzaj') . '</td>';
+           // echo '<td>' . $product->get_menu_order() . '</td>';
+            //echo '<td><a class="button" product-id="' . $id . '"onclick="get_product_data_json(this)">get data</a></td>';
+            echo '</tr>';
             $counter++;
        }
        

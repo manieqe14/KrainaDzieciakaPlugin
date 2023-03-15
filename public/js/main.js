@@ -681,7 +681,7 @@ function kurier_inpost(order_data){
         };
     }
     
-    if((payment_method == 'cod') ||(shipping_method == 'Allegro: Allegro Kurier24 InPost pobranie')){
+    if((payment_method == 'cod') ||(shipping_method == 'Allegro: Allegro Kurier24 InPost pobranie') || (shipping_method == 'Allegro: Kurier InPost pobranie')){
         cod = parseFloat(jQuery('tr[order-id=' + order_data.getAttribute('order-id') +'] .order-total').html());
         
         package['cod'] = {
@@ -945,7 +945,7 @@ function download_order_pdf(data){
     
     order_id = data.getAttribute("order-id");
     //jQuery('.button[package-id="' + package_id + '"]').toggleClass('loading');
-    var req = new XMLHttpRequest();
+    let req = new XMLHttpRequest();
     req.open("POST", ajaxUrl + '?action=get_pdf_order' + '&order_id=' + order_id,
         true);
     req.responseType = "blob";

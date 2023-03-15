@@ -70,7 +70,7 @@ function get_tracking_number_from_id($package_id, $inpost_token){
     
     $data = wp_remote_post($url, $args);
     
-    if(!is_wp_error(data)){
+    if(!is_wp_error($data)){
         return json_decode($data['body'], true)['items']['0']['tracking_number'];
     }
     else

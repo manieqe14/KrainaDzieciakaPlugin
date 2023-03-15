@@ -133,7 +133,7 @@ class variables{
     public static function polish_months_in_date($date){
         $months = array(
             'January' => 'Styczeń',
-            'Febrary' => 'Luty',
+            'February' => 'Luty',
             'March' => 'Marzec',
             'April' => 'Kwiecień',
             'May' => 'Maj',

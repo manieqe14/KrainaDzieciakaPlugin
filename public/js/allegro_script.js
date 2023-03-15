@@ -24,3 +24,5 @@ jQuery(document).ready(function(){
         check_status(id);
     });
 });   
+
+console.log('test');

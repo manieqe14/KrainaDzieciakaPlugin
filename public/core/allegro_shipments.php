@@ -195,6 +195,8 @@ function allegro_shipments_init(){
             );
         }
         
+        
+        
         $package = array(
             'serviceId'=> variables::get_sending_method_id('Allegro DPD'),
             'receiver' => array(
@@ -256,6 +258,22 @@ function allegro_shipments_init(){
             ),
         );
         
+        if($order->get_shipping_method() == 'Allegro: Allegro Kurier DPD pobranie'){
+            $additionalServices = array(
+                'cashOnDelivery' => array(
+                    'value' => array(
+                        'amount' => $order->get_total(),
+                        'currency' => 'PLN',
+                    ),
+                    'accountNumber' => '25114020040000350278444279',
+                    'name' => 'Mariusz Pacyga',
+                    'express' => false,
+                  
+                ),
+            );
+            $package['additionalServices'] = $additionalServices;
+        }
+        
         $uuid = guidv4();
         
         $url = variables::$api_allegro . '/parcel-management/parcel-create-commands/' . $uuid;
@@ -271,11 +289,14 @@ function allegro_shipments_init(){
         );
         
         
-        
+        echo wp_remote_retrieve_body($response); 
+
         if(!is_wp_error($response)){
              sleep(3);
             $package_data = check_package($uuid);
             $package_info = get_package_info($package_data['parcelId']);
+            
+            error_log("DATA!!!: " . print_r($package_data, TRUE));
             
             $order->update_meta_data( 'dpd_uuid', $uuid );
             $order->update_meta_data( 'package_id',  $package_data['parcelId']);
@@ -283,7 +304,7 @@ function allegro_shipments_init(){
             $order->save_meta_data();
         }
         
-        echo wp_remote_retrieve_body($response); 
+        
        
     }
     
