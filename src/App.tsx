@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { observer } from 'mobx-react-lite'
 import { useStore } from './store/store.context';
+import { OrderItem } from './components/orders/order/OrderItem';
 
 function App() {
 
@@ -9,7 +10,7 @@ function App() {
 
     return (<>
         <div>Tu bedzie react APP</div>
-        {orders?.map(item => (<div>{item.id} {item.status}</div>))}
+        {orders?.map(order => <OrderItem data={order}/>)}
     </>);
 }
 

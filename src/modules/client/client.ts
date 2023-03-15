@@ -11,8 +11,7 @@ export class Client implements ClientInterface {
     }
 
     async fetchOrders(): Promise<Order[]> {
-        const { data } = await axios.post<Order[]>(`${this.url}?action=${WP_ACTIONS.FETCH_ORDERS}`)
-        console.info(data);
+        const { data } = await axios.post<Order[]>(`${this.url}?action=${WP_ACTIONS.FETCH_ORDERS}`);
         return data;
     }
 }

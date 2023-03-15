@@ -16,6 +16,7 @@ import StoreContext from './store/store.context';
 const root = ReactDOM.createRoot(
   document.getElementById('react-spa-container') as HTMLElement
 );
+
 const init = async () => {
     if(import.meta.env.DEV) {
         const worker = setupWorker(...handlers);
@@ -25,6 +26,7 @@ const init = async () => {
     const client = new Client(WP_ACTIONS.AJAX_URL);
     const store = new Store({ client });
     await flowResult(store.fetchOrders());
+    
     return store;
 }
 
