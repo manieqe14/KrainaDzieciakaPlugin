@@ -9,6 +9,7 @@ import { Client } from './modules/client/client';
 import { WP_ACTIONS } from './modules/constants';
 import handlers from './modules/stubs/handlers';
 import { setupWorker } from 'msw';
+import StoreContext from './store/store.context';
 
 
 
@@ -24,12 +25,15 @@ const init = async () => {
     const client = new Client(WP_ACTIONS.AJAX_URL);
     const store = new Store({ client });
     await flowResult(store.fetchOrders());
+    return store;
 }
 
-init().then(() => {
+init().then((store ) => {
     root.render(
         <React.StrictMode>
+            <StoreContext value={store}>
             <App />
+            </StoreContext>
         </React.StrictMode>
     );
 })
