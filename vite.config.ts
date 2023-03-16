@@ -13,6 +13,11 @@ export default defineConfig({
         },
         server: {
             port: 8001
+        },
+        resolve: {
+            alias: {
+                '@mui/styled-engine': '@mui/styled-engine-sc'
+            }
         }
     }
 );

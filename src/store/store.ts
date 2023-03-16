@@ -3,7 +3,7 @@ import { ClientInterface } from '../modules/client/client.types';
 import { makeAutoObservable } from 'mobx';
 
 class Store {
-    orders: Order[] | undefined;
+    orders: Order[] = [];
     private client: ClientInterface;
 
     constructor(dependencies: StoreDependencies) {

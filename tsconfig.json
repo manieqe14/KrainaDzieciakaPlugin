@@ -6,7 +6,9 @@
       "dom.iterable",
       "esnext"
     ],
-    "types": ["vite/client"],
+    "types": [
+      "vite/client"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -20,7 +22,12 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "useDefineForClassFields": true
+    "useDefineForClassFields": true,
+    "paths": {
+      "@mui/styled-engine": [
+        "./node_modules/@mui/styled-engine-sc"
+      ]
+    }
   },
   "include": [
     "src"

@@ -9,12 +9,12 @@
     "date_created": {
       "date": "2021-11-22 21:33:41.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "date_modified": {
       "date": "2021-11-26 17:15:31.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "discount_total": "0",
     "discount_tax": "0",
@@ -61,7 +61,7 @@
     "date_paid": {
       "date": "2021-11-22 21:35:18.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "cart_hash": "",
     "number": "2710",
@@ -100,7 +100,8 @@
       "183": {}
     },
     "fee_lines": [],
-    "coupon_lines": []
+    "coupon_lines": [],
+    "shipping_method": "Allegro: Allegro Kurier DPD"
   },
   {
     "id": 2701,
@@ -112,12 +113,12 @@
     "date_created": {
       "date": "2021-05-12 11:38:38.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "date_modified": {
       "date": "2021-09-03 12:26:06.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "discount_total": "0",
     "discount_tax": "0",
@@ -157,7 +158,7 @@
     "payment_method_title": "Za pobraniem",
     "transaction_id": "",
     "customer_ip_address": "77.237.25.102",
-    "customer_user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36 Edg/90.0.818.51",
+    "customer_user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/90.0.4430.93 Safari\/537.36 Edg\/90.0.818.51",
     "created_via": "checkout",
     "customer_note": "",
     "date_completed": null,
@@ -206,7 +207,8 @@
     "fee_lines": {
       "180": {}
     },
-    "coupon_lines": []
+    "coupon_lines": [],
+    "shipping_method": "Kurier InPost"
   },
   {
     "id": 2698,
@@ -218,12 +220,12 @@
     "date_created": {
       "date": "2021-04-27 21:10:29.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "date_modified": {
       "date": "2021-04-27 21:11:05.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "discount_total": "0",
     "discount_tax": "0",
@@ -269,12 +271,12 @@
     "date_completed": {
       "date": "2021-04-27 21:11:05.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "date_paid": {
       "date": "2021-04-27 21:11:05.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "cart_hash": "",
     "number": "2698",
@@ -301,7 +303,8 @@
     "tax_lines": [],
     "shipping_lines": [],
     "fee_lines": [],
-    "coupon_lines": []
+    "coupon_lines": [],
+    "shipping_method": ""
   },
   {
     "id": 2694,
@@ -313,12 +316,12 @@
     "date_created": {
       "date": "2021-04-20 08:06:48.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "date_modified": {
       "date": "2021-04-20 08:06:48.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "discount_total": "0",
     "discount_tax": "0",
@@ -358,7 +361,7 @@
     "payment_method_title": "Przelew bankowy",
     "transaction_id": "",
     "customer_ip_address": "77.237.25.102",
-    "customer_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.2 Safari/605.1.15",
+    "customer_user_agent": "Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit\/605.1.15 (KHTML, like Gecko) Version\/14.0.2 Safari\/605.1.15",
     "created_via": "checkout",
     "customer_note": "",
     "date_completed": null,
@@ -385,7 +388,8 @@
       "174": {}
     },
     "fee_lines": [],
-    "coupon_lines": []
+    "coupon_lines": [],
+    "shipping_method": "Kurier DPD"
   },
   {
     "id": 2689,
@@ -397,12 +401,12 @@
     "date_created": {
       "date": "2021-04-03 20:58:35.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "date_modified": {
       "date": "2021-04-06 19:13:10.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "discount_total": "5.02",
     "discount_tax": "0",
@@ -415,11 +419,11 @@
     "order_key": "wc_order_VHazHiOTsQRmt",
     "billing": {
       "first_name": "Agnieszka",
-      "last_name": "Paździorek-Trybuła",
+      "last_name": "Pa\u017adziorek-Trybu\u0142a",
       "company": "",
       "address_1": "Os. Szkolne",
-      "address_2": "33/14",
-      "city": "Kraków",
+      "address_2": "33\/14",
+      "city": "Krak\u00f3w",
       "state": "",
       "postcode": "31-978",
       "country": "PL",
@@ -428,11 +432,11 @@
     },
     "shipping": {
       "first_name": "Agnieszka",
-      "last_name": "Paździorek-Trybuła",
+      "last_name": "Pa\u017adziorek-Trybu\u0142a",
       "company": "",
       "address_1": "Os. Szkolne",
-      "address_2": "33/14",
-      "city": "Kraków",
+      "address_2": "33\/14",
+      "city": "Krak\u00f3w",
       "state": "",
       "postcode": "31-978",
       "country": "PL",
@@ -442,18 +446,18 @@
     "payment_method_title": "BLIK",
     "transaction_id": "",
     "customer_ip_address": "89.74.71.8",
-    "customer_user_agent": "Mozilla/5.0 (Linux; Android 10; Redmi Note 8T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.105 Mobile Safari/537.36",
+    "customer_user_agent": "Mozilla\/5.0 (Linux; Android 10; Redmi Note 8T) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/89.0.4389.105 Mobile Safari\/537.36",
     "created_via": "checkout",
     "customer_note": "",
     "date_completed": {
       "date": "2021-04-06 19:13:10.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "date_paid": {
       "date": "2021-04-03 21:00:00.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "cart_hash": "d199869d13a022f455f896d2dcd1570e",
     "number": "2689",
@@ -501,7 +505,7 @@
       {
         "id": 30180,
         "key": "_invoice_number",
-        "value": "2/04/2021"
+        "value": "2\/04\/2021"
       },
       {
         "id": 30186,
@@ -526,7 +530,8 @@
     "fee_lines": [],
     "coupon_lines": {
       "172": {}
-    }
+    },
+    "shipping_method": "Darmowa wysy\u0142ka"
   },
   {
     "id": 2688,
@@ -538,12 +543,12 @@
     "date_created": {
       "date": "2021-04-03 15:05:06.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "date_modified": {
       "date": "2021-04-06 19:12:48.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "discount_total": "0",
     "discount_tax": "0",
@@ -558,9 +563,9 @@
       "first_name": "Joanna",
       "last_name": "Surdziel",
       "company": "",
-      "address_1": "Dębowa 12/10",
+      "address_1": "D\u0119bowa 12\/10",
       "address_2": "",
-      "city": "Kraków",
+      "city": "Krak\u00f3w",
       "state": "",
       "postcode": "30-308",
       "country": "PL",
@@ -571,9 +576,9 @@
       "first_name": "Joanna",
       "last_name": "Surdziel",
       "company": "",
-      "address_1": "Dębowa 12/10",
+      "address_1": "D\u0119bowa 12\/10",
       "address_2": "",
-      "city": "Kraków",
+      "city": "Krak\u00f3w",
       "state": "",
       "postcode": "30-308",
       "country": "PL",
@@ -583,18 +588,18 @@
     "payment_method_title": "BLIK",
     "transaction_id": "",
     "customer_ip_address": "5.172.234.113",
-    "customer_user_agent": "Mozilla/5.0 (Linux; Android 10; Mi 9 SE Build/QKQ1.190828.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/89.0.4389.105 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/312.0.0.45.117;]",
+    "customer_user_agent": "Mozilla\/5.0 (Linux; Android 10; Mi 9 SE Build\/QKQ1.190828.002; wv) AppleWebKit\/537.36 (KHTML, like Gecko) Version\/4.0 Chrome\/89.0.4389.105 Mobile Safari\/537.36 [FB_IAB\/FB4A;FBAV\/312.0.0.45.117;]",
     "created_via": "checkout",
     "customer_note": "Pozdrawiamy Surdzielki !",
     "date_completed": {
       "date": "2021-04-06 19:12:48.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "date_paid": {
       "date": "2021-04-03 15:06:01.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "cart_hash": "6d81fb2ba08aabcdee21435b69d57d52",
     "number": "2688",
@@ -617,12 +622,12 @@
       {
         "id": 29763,
         "key": "easypack_first_line",
-        "value": "Kilińskiego 2"
+        "value": "Kili\u0144skiego 2"
       },
       {
         "id": 29764,
         "key": "easypack_second_line",
-        "value": "30-308 Kraków"
+        "value": "30-308 Krak\u00f3w"
       },
       {
         "id": 29766,
@@ -657,7 +662,7 @@
       {
         "id": 30176,
         "key": "_invoice_number",
-        "value": "14/04/2021"
+        "value": "14\/04\/2021"
       },
       {
         "id": 30175,
@@ -684,7 +689,8 @@
       "167": {}
     },
     "fee_lines": [],
-    "coupon_lines": []
+    "coupon_lines": [],
+    "shipping_method": "Paczkomat InPost"
   },
   {
     "id": 2682,
@@ -696,12 +702,12 @@
     "date_created": {
       "date": "2021-04-02 13:32:30.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "date_modified": {
       "date": "2021-06-10 22:03:15.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "discount_total": "0",
     "discount_tax": "0",
@@ -714,11 +720,11 @@
     "order_key": "wc_order_NT4sngMxq19H5",
     "billing": {
       "first_name": "Ela",
-      "last_name": "Makoś",
+      "last_name": "Mako\u015b",
       "company": "",
-      "address_1": "Mała Góra 8A/7",
+      "address_1": "Ma\u0142a G\u00f3ra 8A\/7",
       "address_2": "",
-      "city": "Kraków",
+      "city": "Krak\u00f3w",
       "state": "",
       "postcode": "30-864",
       "country": "PL",
@@ -727,11 +733,11 @@
     },
     "shipping": {
       "first_name": "Ela",
-      "last_name": "Makoś",
+      "last_name": "Mako\u015b",
       "company": "",
-      "address_1": "Mała Góra 8A/7",
+      "address_1": "Ma\u0142a G\u00f3ra 8A\/7",
       "address_2": "",
-      "city": "Kraków",
+      "city": "Krak\u00f3w",
       "state": "",
       "postcode": "30-864",
       "country": "PL",
@@ -741,18 +747,18 @@
     "payment_method_title": "Za pobraniem",
     "transaction_id": "",
     "customer_ip_address": "193.254.239.178",
-    "customer_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.2 Safari/605.1.15",
+    "customer_user_agent": "Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit\/605.1.15 (KHTML, like Gecko) Version\/14.0.2 Safari\/605.1.15",
     "created_via": "checkout",
     "customer_note": "",
     "date_completed": {
       "date": "2021-04-27 19:06:07.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "date_paid": {
       "date": "2021-04-02 13:34:33.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "cart_hash": "d748a13b41fac2a74996188c9aea306c",
     "number": "2682",
@@ -805,7 +811,7 @@
       {
         "id": 29705,
         "key": "easypack_second_line",
-        "value": "30-864 Kraków"
+        "value": "30-864 Krak\u00f3w"
       },
       {
         "id": 29707,
@@ -846,7 +852,8 @@
       "164": {}
     },
     "fee_lines": [],
-    "coupon_lines": []
+    "coupon_lines": [],
+    "shipping_method": "Paczkomat InPost"
   },
   {
     "id": 2673,
@@ -858,12 +865,12 @@
     "date_created": {
       "date": "2021-04-01 22:36:26.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "date_modified": {
       "date": "2021-05-25 17:54:51.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "discount_total": "0",
     "discount_tax": "0",
@@ -903,7 +910,7 @@
     "payment_method_title": "Za pobraniem",
     "transaction_id": "",
     "customer_ip_address": "193.254.239.178",
-    "customer_user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36 Edg/89.0.774.63",
+    "customer_user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/89.0.4389.90 Safari\/537.36 Edg\/89.0.774.63",
     "created_via": "checkout",
     "customer_note": "",
     "date_completed": null,
@@ -939,7 +946,7 @@
       {
         "id": 28696,
         "key": "easypack_first_line",
-        "value": "Zagórna 1A"
+        "value": "Zag\u00f3rna 1A"
       },
       {
         "id": 28697,
@@ -985,7 +992,8 @@
       "162": {}
     },
     "fee_lines": [],
-    "coupon_lines": []
+    "coupon_lines": [],
+    "shipping_method": "Paczkomat InPost"
   },
   {
     "id": 2651,
@@ -997,12 +1005,12 @@
     "date_created": {
       "date": "2021-03-30 14:17:11.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "date_modified": {
       "date": "2021-04-05 17:53:40.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "discount_total": "20",
     "discount_tax": "0",
@@ -1015,11 +1023,11 @@
     "order_key": "wc_order_KKaFODHKs42vJ",
     "billing": {
       "first_name": "Ela",
-      "last_name": "Makoś",
+      "last_name": "Mako\u015b",
       "company": "",
-      "address_1": "Mała Góra 8a",
+      "address_1": "Ma\u0142a G\u00f3ra 8a",
       "address_2": "",
-      "city": "Kraków",
+      "city": "Krak\u00f3w",
       "state": "",
       "postcode": "34-222",
       "country": "PL",
@@ -1028,11 +1036,11 @@
     },
     "shipping": {
       "first_name": "Ela",
-      "last_name": "Makoś",
+      "last_name": "Mako\u015b",
       "company": "",
-      "address_1": "Mała Góra 8a",
+      "address_1": "Ma\u0142a G\u00f3ra 8a",
       "address_2": "",
-      "city": "Kraków",
+      "city": "Krak\u00f3w",
       "state": "",
       "postcode": "34-222",
       "country": "PL",
@@ -1042,14 +1050,14 @@
     "payment_method_title": "BLIK",
     "transaction_id": "",
     "customer_ip_address": "77.237.25.102",
-    "customer_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.2 Safari/605.1.15",
+    "customer_user_agent": "Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit\/605.1.15 (KHTML, like Gecko) Version\/14.0.2 Safari\/605.1.15",
     "created_via": "checkout",
     "customer_note": "",
     "date_completed": null,
     "date_paid": {
       "date": "2021-03-30 22:36:30.000000",
       "timezone_type": 3,
-      "timezone": "Europe/Warsaw"
+      "timezone": "Europe\/Warsaw"
     },
     "cart_hash": "b60748349918d2c27fabd76e2b959b53",
     "number": "2651",
@@ -1126,6 +1134,7 @@
     "fee_lines": [],
     "coupon_lines": {
       "138": {}
-    }
+    },
+    "shipping_method": "Darmowa wysy\u0142ka"
   }
 ]

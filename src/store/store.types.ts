@@ -5,13 +5,47 @@ export interface StoreDependencies {
 }
 
 type Shipping = {
+    first_name: string,
+    last_name: string,
+    company: string,
     address_1: string,
     address_2: string,
+    city: string,
+    state: string,
+    postcode: string,
+    phone: string
 }
+
+type Billing = {
+    first_name: string,
+    last_name: string,
+    company: string,
+    address_1: string,
+    address_2: string,
+    city: string,
+    state: string,
+    postcode: string,
+    country: string,
+    email: string,
+    phone: string
+}
+
+type DateCreated = {
+    date: string,
+    timezone_type: number,
+    timezone: string
+}
+
+export type OrderStatus = "processing" | "completed" | "on-hold";
+
 export type Order = {
     id: number,
-    date_created: string,
+    total: string;
+    currency: string,
+    date_created: DateCreated,
     shipping: Shipping,
-    status: "processing" | "completed" | "on-hold",
-    phone: string
+    status: OrderStatus,
+    phone: string,
+    billing: Billing,
+    shipping_method: string;
 }

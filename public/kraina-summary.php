@@ -178,7 +178,9 @@ function invoices_init()
         $orders_array = array();
         foreach ($orders as $order_id) {
             $order = wc_get_order($order_id);
-            array_push($orders_array, $order->get_data());
+            $order_data = $order->get_data();
+            $order_data['shipping_method'] = $order->get_shipping_method();
+            array_push($orders_array, $order_data);
         }
         echo json_encode($orders_array);
         exit;
