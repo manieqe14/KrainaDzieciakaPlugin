@@ -2,9 +2,11 @@ import { Order, StoreDependencies } from './store.types';
 import { ClientInterface } from '../modules/client/client.types';
 import { makeAutoObservable } from 'mobx';
 import FakturowniaClient from '../modules/fakturownia/FakturowniaClient';
+import UIStore from './ui/UIStore';
 
 class Store {
     orders: Order[] = [];
+    ui: UIStore;
     private client: ClientInterface;
     private fakturowniaClient: FakturowniaClient;
 
@@ -13,6 +15,7 @@ class Store {
 
         this.client = dependencies.client;
         this.fakturowniaClient = dependencies.fakturowniaClient;
+        this.ui = dependencies.uiStore;
     }
 
     public* fetchOrders(): Generator<Promise<Order[]>, void, Order[]> {

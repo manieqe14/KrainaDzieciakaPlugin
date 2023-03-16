@@ -11,33 +11,47 @@ import handlers from './modules/stubs/handlers';
 import { setupWorker } from 'msw';
 import StoreContext from './store/store.context';
 import FakturowniaClient from './modules/fakturownia/FakturowniaClient';
-
+import UIStore from './store/ui/UIStore';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { OrdersList } from './components/orders/OrdersList';
+import { Settings } from './components/settings/Settings';
 
 
 const root = ReactDOM.createRoot(
-  document.getElementById('react-spa-container') as HTMLElement
-);
+    document.getElementById('react-spa-container') as HTMLElement
+)
+
+
+const router = createBrowserRouter([{
+    path: "/",
+    element: <App />,
+    children: [{ path: "/orders", element: <OrdersList /> }, { path: "/settings", element: <Settings /> }]
+}]);
 
 const init = async () => {
-    if(import.meta.env.DEV) {
+    if (import.meta.env.DEV) {
         const worker = setupWorker(...handlers);
         await worker.start().catch(() => console.error('Worker error'));
     }
 
     const client = new Client(WP_ACTIONS.AJAX_URL);
+    const uiStore = new UIStore();
+
     await flowResult(client.fetchGeneralSettings());
+
     const fakturowniaClient = new FakturowniaClient(client.generalSettings?.fakturownia?.token);
-    const store = new Store({ client, fakturowniaClient });
+    const store = new Store({ client, fakturowniaClient, uiStore });
+
     await flowResult(store.fetchOrders());
-    
+
     return store;
 }
 
-init().then((store ) => {
+init().then((store) => {
     root.render(
         <React.StrictMode>
             <StoreContext value={store}>
-            <App />
+                <RouterProvider router={router} />
             </StoreContext>
         </React.StrictMode>
     );

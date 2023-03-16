@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
-import { observer } from 'mobx-react-lite'
-import { OrdersList } from './components/orders/OrdersList';
+import { Navigation } from './components/navigation/Navigation';
+import { Outlet } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
 
 function App() {
-    return (<OrdersList />);
+
+    return (<><Navigation /><Outlet/></>);
 }
 
 export default observer(App);

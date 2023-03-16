@@ -3,7 +3,7 @@ import { AccordionSummaryProps } from '@mui/material/AccordionSummary/AccordionS
 import { AccordionSummary, Grid } from '@mui/material';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import { OrderStatus } from '../../../store/store.types';
-import { OrderColours } from '../../../store/uiConstans';
+import { OrderColours } from '../../../store/ui/uiConstans';
 
 
 export const OrderItemSummary = styled((props: AccordionSummaryProps & { status: OrderStatus }) => (

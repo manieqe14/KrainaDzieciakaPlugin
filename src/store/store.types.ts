@@ -1,8 +1,10 @@
 import { ClientInterface } from '../modules/client/client.types';
 import FakturowniaClient from '../modules/fakturownia/FakturowniaClient';
+import UIStore from './ui/UIStore';
 
 export interface StoreDependencies {
     client: ClientInterface;
+    uiStore: UIStore;
     fakturowniaClient: FakturowniaClient;
 }
 
