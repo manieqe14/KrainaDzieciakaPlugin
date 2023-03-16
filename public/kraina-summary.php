@@ -191,14 +191,12 @@ function invoices_init()
 
     function general_config()
     {
-        echo json_encode(array(
-            'ajaxUrl' => admin_url('admin-ajax.php'),
-            'ajaxPost' => admin_url('admin-post.php'),
-            'inpost_token' => variables::get_inpost_token(),
-            'inpost_sender' => get_option('inpost_settings')['inpost_sender'],
-            'new_shipment_fields' => variables::$new_shipment_fields,
-            'shipment_methods' => variables::$shipment_methods,
-        ));
+        $key = 'kraina_plugin_options';
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            update_option($key, $_POST);
+        } else {
+            echo json_encode(get_option($key));
+        }
         die();
     }
 

@@ -1,7 +1,9 @@
 import { ClientInterface } from '../modules/client/client.types';
+import FakturowniaClient from '../modules/fakturownia/FakturowniaClient';
 
 export interface StoreDependencies {
     client: ClientInterface;
+    fakturowniaClient: FakturowniaClient;
 }
 
 type Shipping = {

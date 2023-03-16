@@ -6,6 +6,12 @@ export type ClientConfig = {
     inpost_token: string
 }
 
+export type GeneralSettings = {
+    fakturownia: {
+        token: string;
+    }
+}
+
 export interface ClientInterface {
    url?: string;
    fetchOrders: () => Promise<Order[]>;
