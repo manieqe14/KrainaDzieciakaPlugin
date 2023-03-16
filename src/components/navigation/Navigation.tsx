@@ -37,7 +37,7 @@ export const Navigation: FC = () => {
                 'aria-labelledby': 'basic-button',
             }}
         >
-            {Object.entries(Pages).map(([key, page]) => <MenuItem onClick={() => handleClose(key)}>{page.title}</MenuItem>)}
+            {Object.entries(Pages).map(([key, page]) => <MenuItem key={key} onClick={() => handleClose(key)}>{page.title}</MenuItem>)}
         </Menu>
     </div>);
 }
