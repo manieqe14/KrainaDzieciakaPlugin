@@ -12,21 +12,12 @@ import { setupWorker } from 'msw';
 import StoreContext from './store/store.context';
 import FakturowniaClient from './modules/fakturownia/FakturowniaClient';
 import UIStore from './store/ui/UIStore';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { OrdersList } from './components/orders/OrdersList';
-import { Settings } from './components/settings/Settings';
 
 
 const root = ReactDOM.createRoot(
     document.getElementById('react-spa-container') as HTMLElement
 )
 
-
-const router = createBrowserRouter([{
-    path: "/",
-    element: <App />,
-    children: [{ path: "/orders", element: <OrdersList /> }, { path: "/settings", element: <Settings /> }]
-}]);
 
 const init = async () => {
     if (import.meta.env.DEV) {
@@ -51,7 +42,7 @@ init().then((store) => {
     root.render(
         <React.StrictMode>
             <StoreContext value={store}>
-                <RouterProvider router={router} />
+                <App />
             </StoreContext>
         </React.StrictMode>
     );

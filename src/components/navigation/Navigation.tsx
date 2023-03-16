@@ -2,7 +2,6 @@ import { FC, MouseEventHandler, useState } from 'react';
 import { Button, Menu, MenuItem } from '@mui/material';
 import { useStore } from '../../store/store.context';
 import { Pages } from '../../store/ui/uiConstans';
-import { Link } from 'react-router-dom';
 
 export const Navigation: FC = () => {
 
@@ -13,7 +12,9 @@ export const Navigation: FC = () => {
     const handleClick: MouseEventHandler<HTMLButtonElement> = (event) => {
         setAnchorEl(event.currentTarget);
     };
-    const handleClose: MouseEventHandler<HTMLAnchorElement> = () => {
+    const handleClose = (item: string) => {
+        console.info(item);
+        ui.currentPage = item;
         setAnchorEl(null);
     };
 
@@ -36,8 +37,7 @@ export const Navigation: FC = () => {
                 'aria-labelledby': 'basic-button',
             }}
         >
-            {Object.values(Pages).map(({ title, path }) => <Link to={path}
-                                                                 onClick={handleClose}><MenuItem>{title}</MenuItem></Link>)}
+            {Object.entries(Pages).map(([key, page]) => <MenuItem onClick={() => handleClose(key)}>{page.title}</MenuItem>)}
         </Menu>
     </div>);
 }
