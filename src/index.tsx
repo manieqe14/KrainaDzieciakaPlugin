@@ -30,7 +30,7 @@ const init = async () => {
 
     await flowResult(client.fetchGeneralSettings());
 
-    const fakturowniaClient = new FakturowniaClient(client.generalSettings?.fakturownia?.token);
+    const fakturowniaClient = new FakturowniaClient({client});
     const store = new Store({ client, fakturowniaClient, uiStore });
 
     await flowResult(store.fetchOrders());

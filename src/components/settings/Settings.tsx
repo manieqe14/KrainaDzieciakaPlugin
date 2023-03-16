@@ -2,6 +2,7 @@ import { FakturowniaSettings } from './FakturowniaSettings';
 import { Box, Tab, Tabs, Typography } from '@mui/material';
 import { FC, SyntheticEvent, useState } from 'react';
 import { GeneralSettings } from './GeneralSettings';
+import { observer } from 'mobx-react-lite';
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -29,7 +30,7 @@ function TabPanel(props: TabPanelProps) {
     );
 }
 
-export const Settings: FC = () => {
+const Settings: FC = () => {
     const [activeTab, setActiveTab] = useState(0);
 
     const handleChange = (event: SyntheticEvent, newValue: number) => {
@@ -48,3 +49,5 @@ export const Settings: FC = () => {
     </Box>
 )
 }
+
+export default observer(Settings);

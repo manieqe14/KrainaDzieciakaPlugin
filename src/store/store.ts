@@ -8,7 +8,7 @@ class Store {
     orders: Order[] = [];
     ui: UIStore;
     private client: ClientInterface;
-    private fakturowniaClient: FakturowniaClient;
+    fakturowniaClient: FakturowniaClient;
 
     constructor(dependencies: StoreDependencies) {
         makeAutoObservable(this, {}, { autoBind: true })
@@ -18,7 +18,7 @@ class Store {
         this.ui = dependencies.uiStore;
     }
 
-    public* fetchOrders(): Generator<Promise<Order[]>, void, Order[]> {
+    public *fetchOrders(): Generator<Promise<Order[]>, void, Order[]> {
         try {
             this.orders = yield this.client.fetchOrders();
         } catch (error) {

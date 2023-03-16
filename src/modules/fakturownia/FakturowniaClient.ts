@@ -1,7 +1,15 @@
+import { FakturowniaClientDeps } from "./FakturowniaClient.types";
+
 export default class FakturowniaClient {
     private token: string | undefined;
 
-    constructor(token?: string) {
-        this.token = token;
+    constructor(deps: FakturowniaClientDeps) {
+        this.token = deps.client.generalSettings?.fakturownia?.token;
+    }
+
+    get settings(){
+        return {
+            token: this.token
+        }
     }
 }
