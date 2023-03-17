@@ -10,7 +10,6 @@ import { WP_ACTIONS } from './modules/constants';
 import handlers from './modules/stubs/handlers';
 import { setupWorker } from 'msw';
 import StoreContext from './store/store.context';
-import FakturowniaClient from './modules/fakturownia/FakturowniaClient';
 import UIStore from './store/ui/UIStore';
 
 
@@ -28,12 +27,9 @@ const init = async () => {
     const client = new Client(WP_ACTIONS.AJAX_URL);
     const uiStore = new UIStore();
 
-    await flowResult(client.fetchGeneralSettings());
+    const store = new Store({ client, uiStore });
 
-    const fakturowniaClient = new FakturowniaClient({client});
-    const store = new Store({ client, fakturowniaClient, uiStore });
-
-    await flowResult(store.fetchOrders());
+    await flowResult(store.init());
 
     return store;
 }

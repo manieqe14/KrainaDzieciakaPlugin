@@ -2,7 +2,7 @@ import { Accordion, AccordionDetails, Grid } from "@mui/material";
 import { FC, PropsWithChildren } from "react";
 import { Order } from "../../../store/store.types";
 import { DataInfoContainer } from '../../../modules/core/components/DataInfoContainer/DataInfoContainer';
-import { OrderItemSummary } from './OrderItem.styles';
+import { OrderItemSummary, StyledChip } from './OrderItem.styles';
 import { getFormattedDate } from '../../../modules/utils/dateUtils';
 
 export const OrderItem: FC<PropsWithChildren & { data: Order }> = ({ data }) => {
@@ -14,7 +14,7 @@ export const OrderItem: FC<PropsWithChildren & { data: Order }> = ({ data }) => 
             <OrderItemSummary status={status}>
                 <Grid item xs={1}>{id}</Grid>
                 <Grid item xs={2}>{getFormattedDate(date_created.date)}</Grid>
-                <Grid item xs={2}>{status}</Grid>
+                <Grid item xs={2}><StyledChip label={status} /></Grid>
                 <Grid item xs={2}>{total} {currency}</Grid>
                 <Grid item xs={4}>{shipping.first_name} {shipping.last_name}</Grid>
             </OrderItemSummary>

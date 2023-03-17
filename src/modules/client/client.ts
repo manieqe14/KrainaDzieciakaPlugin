@@ -1,7 +1,8 @@
-import { ClientInterface, GeneralSettings } from './client.types';
+import { ClientInterface, GeneralSettings, StoreGeneralDeps } from './client.types';
 import axios from 'axios';
 import { WP_ACTIONS } from '../constants';
 import { Order } from '../../store/store.types';
+import FakturowniaClient from '../fakturownia/FakturowniaClient';
 
 export class Client implements ClientInterface {
     url: string | undefined;
@@ -16,8 +17,11 @@ export class Client implements ClientInterface {
         return data;
     }
 
-    async fetchGeneralSettings(): Promise<void> {
+    async fetchGeneralSettings(): Promise<StoreGeneralDeps> {
         const { data } = await axios.get<GeneralSettings>(`${this.url}?action=${WP_ACTIONS.GENERAL_CONFIG}`);
         this.generalSettings = data;
+        return ({
+           fakturownia: new FakturowniaClient({ client: this })
+        });
     }
 }

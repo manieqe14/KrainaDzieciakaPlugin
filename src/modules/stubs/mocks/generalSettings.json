@@ -1,0 +1,12 @@
+{
+  "fakturownia": [
+    {
+      "name": "token",
+      "value": "test"
+    },
+    {
+      "name": "sandbox",
+      "value": false
+    }
+  ]
+}

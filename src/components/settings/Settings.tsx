@@ -3,6 +3,7 @@ import { Box, Tab, Tabs, Typography } from '@mui/material';
 import { FC, SyntheticEvent, useState } from 'react';
 import { GeneralSettings } from './GeneralSettings';
 import { observer } from 'mobx-react-lite';
+import { useStore } from '../../store/store.context';
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -32,6 +33,7 @@ function TabPanel(props: TabPanelProps) {
 
 const Settings: FC = () => {
     const [activeTab, setActiveTab] = useState(0);
+    const { fakturowniaSettings } = useStore();
 
     const handleChange = (event: SyntheticEvent, newValue: number) => {
         setActiveTab(newValue);
@@ -44,7 +46,7 @@ const Settings: FC = () => {
             <Tab label="General Settings"/>
         </Tabs>
         </Box>
-        <TabPanel value={activeTab} index={0}><FakturowniaSettings /></TabPanel>
+        <TabPanel value={activeTab} index={0}><FakturowniaSettings settings={fakturowniaSettings}/></TabPanel>
             <TabPanel value={activeTab} index={1}><GeneralSettings /></TabPanel>
     </Box>
 )
