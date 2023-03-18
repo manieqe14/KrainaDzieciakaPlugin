@@ -1,11 +1,23 @@
-import { FormField } from './FormField';
 import { Form } from './FomrFields.styles';
-import { FormFieldsProps } from './FormFIelds.types';
+import { FormFieldProps } from './FormFIelds.types';
+import { FC } from 'react';
+import { Checkbox, FormControlLabel, TextField } from '@mui/material';
 
-export function FormFields<T extends string>({ fields }: FormFieldsProps<T>){
-    return(<>
+export const FormFields: FC<FormFieldProps[]> = (fields) => {
+
+    return (
         <Form>
-        { fields.map(field => (<FormField field={field} />))}
+            {Object.values(fields).map(({ name, value, onChange, type }) => {
+                    switch (type) {
+                        case 'input':
+                            return <TextField id={name} type="text" label={name} value={value}
+                                              onChange={() => onChange(value)} />
+                        case 'select':
+                            return <FormControlLabel control={<Checkbox value={value} />} label={name} />
+                    }
+                }
+            )
+            }
         </Form>
-    </>)
+    )
 }

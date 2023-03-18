@@ -6,6 +6,5 @@ import { useFormData } from '../../modules/hooks/useFormData';
 export const FakturowniaSettings: FC<FakturowniaSettingsProps> = ({ settings }) => {
     const [fields] = useFormData(settings);
 
-
-    return (<FormFields fields={fields} />);
+    return (<FormFields {...fields} />);
 }
