@@ -1,0 +1,1 @@
+const isNil = (item: any): boolean => (item === null || item === undefined) ? true : false

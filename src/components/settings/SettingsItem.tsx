@@ -1,11 +1,11 @@
 import { FC } from 'react';
-import { FakturowniaSettingsProps } from './Settings.types';
 import { FormFields } from '../../modules/core/components/Form/FormFields';
 import { Form } from '../../modules/core/components/Form/Form';
+import { SettingsItemProps } from './Settings.types';
 
-export const FakturowniaSettings: FC<FakturowniaSettingsProps> = ({ settings }) => {
+export const SettingsItem: FC<SettingsItemProps> = ({ settings, handleChange }) => {
 
-    return (<Form controls={settings}>
+    return (<Form handleChange={handleChange} controls={settings}>
         <FormFields />
     </Form>);
 }

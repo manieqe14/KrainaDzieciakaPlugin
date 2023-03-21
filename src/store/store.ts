@@ -32,8 +32,22 @@ class Store {
         }
     }
 
-    get fakturowniaSettings(): GeneralSettings['fakturownia'] | null {
-        return this.fakturowniaClient?.settings ?? null;
+    get fakturowniaSettings(): GeneralSettings['fakturownia'] | undefined {
+        return this.fakturowniaClient?.settings;
+    }
+
+    public setFakturowniaSettings(settings: GeneralSettings['fakturownia'] | undefined) {
+        if(this.fakturowniaClient !== undefined) {
+            this.fakturowniaClient.settings = settings;
+        }
+    }
+
+    public  *saveSettings(): Generator<Promise<void>, void, void> {
+        this.client.saveGeneralSettings({ fakturownia: this.fakturowniaClient?.settings });
+    }
+
+    public saveEnabled(): boolean {
+        return this.client.isEqual({...({ fakturownia: this.fakturowniaClient?.settings })});
     }
 }
 

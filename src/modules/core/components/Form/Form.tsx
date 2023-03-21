@@ -3,9 +3,9 @@ import FormFieldsProvider from '../../context/formFields.context'
 import { useFormData } from '../../../hooks/useFormData';
 import { FormProps } from './FormFIelds.types';
 
-export const Form: FC<PropsWithChildren & FormProps> = ({ children, controls  }) => {
+export const Form: FC<PropsWithChildren & FormProps> = ({ children, controls, handleChange  }) => {
 
-    const [fields] = useFormData(controls);
+    const [fields] = useFormData(controls, handleChange);
 
     return (
         <FormFieldsProvider value={fields} >

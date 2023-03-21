@@ -1,9 +1,9 @@
-import { FakturowniaSettings } from './FakturowniaSettings';
-import { Box, Tab, Tabs, Typography } from '@mui/material';
+import { SettingsItem } from './SettingsItem';
+import { Box, Button, Tab, Tabs, Typography } from '@mui/material';
 import { FC, SyntheticEvent, useState } from 'react';
-import { GeneralSettings } from './GeneralSettings';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '../../store/store.context';
+import { GeneralSettingItem } from './Settings.types';
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -33,11 +33,21 @@ function TabPanel(props: TabPanelProps) {
 
 const Settings: FC = () => {
     const [activeTab, setActiveTab] = useState(0);
-    const { fakturowniaSettings } = useStore();
+    const [save, setSave] = useState(false);
+    const { fakturowniaSettings, saveSettings, setFakturowniaSettings, saveEnabled } = useStore();
 
     const handleChange = (event: SyntheticEvent, newValue: number) => {
         setActiveTab(newValue);
     };
+
+    const handleSettingChange = (item: GeneralSettingItem) => {
+        setFakturowniaSettings(item);
+        setSave(() => saveEnabled());
+    };
+
+    const onSubmit = () => {
+        saveSettings();
+    }
 
     return (<Box>
             <Box>
@@ -46,8 +56,9 @@ const Settings: FC = () => {
                     <Tab label="General Settings" />
                 </Tabs>
             </Box>
-            <TabPanel value={activeTab} index={0}><FakturowniaSettings settings={fakturowniaSettings} /></TabPanel>
-            <TabPanel value={activeTab} index={1}><GeneralSettings /></TabPanel>
+            {fakturowniaSettings && (<TabPanel value={activeTab} index={0}><SettingsItem handleChange={handleSettingChange} settings={fakturowniaSettings} /></TabPanel>)}
+            <TabPanel value={activeTab} index={1}><SettingsItem handleChange={handleSettingChange} settings={[]} /></TabPanel>
+            <Button sx={{ float: 'right', mr: '10px'}} disabled={save} variant="contained" onClick={onSubmit}>SAVE</Button>
         </Box>
     )
 }

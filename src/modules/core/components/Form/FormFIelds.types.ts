@@ -1,3 +1,4 @@
+import { GeneralSettingItem } from '../../../../components/settings/Settings.types';
 import { SettingField } from '../../../hooks/hooks.types';
 
 export type FormFieldProps = {
@@ -8,5 +9,6 @@ export type FormFieldProps = {
 }
 
 export type FormProps = {
-    controls: SettingField[]
+    controls: SettingField[],
+    handleChange: (values: GeneralSettingItem) => void;
 }
