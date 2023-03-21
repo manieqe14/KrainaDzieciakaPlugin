@@ -14,7 +14,7 @@ export function useFormData<T extends string>(config: SettingField<T>[]) {
 
         return {
             ...value,
-            type: typeof value.value === 'boolean' ? 'input' : 'select',
+            type: typeof value.value === 'boolean' ? 'select' : 'input',
             onChange: setValue
         }
     });

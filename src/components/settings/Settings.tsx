@@ -40,16 +40,16 @@ const Settings: FC = () => {
     };
 
     return (<Box>
-        <Box>
-        <Tabs value={activeTab} onChange={handleChange}>
-            <Tab label="Fakturownia" />
-            <Tab label="General Settings"/>
-        </Tabs>
-        </Box>
-        <TabPanel value={activeTab} index={0}><FakturowniaSettings settings={fakturowniaSettings}/></TabPanel>
+            <Box>
+                <Tabs value={activeTab} onChange={handleChange}>
+                    <Tab label="Fakturownia" />
+                    <Tab label="General Settings" />
+                </Tabs>
+            </Box>
+            <TabPanel value={activeTab} index={0}><FakturowniaSettings settings={fakturowniaSettings} /></TabPanel>
             <TabPanel value={activeTab} index={1}><GeneralSettings /></TabPanel>
-    </Box>
-)
+        </Box>
+    )
 }
 
 export default observer(Settings);

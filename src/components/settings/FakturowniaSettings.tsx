@@ -1,10 +1,11 @@
 import { FC } from 'react';
 import { FakturowniaSettingsProps } from './Settings.types';
 import { FormFields } from '../../modules/core/components/Form/FormFields';
-import { useFormData } from '../../modules/hooks/useFormData';
+import { Form } from '../../modules/core/components/Form/Form';
 
 export const FakturowniaSettings: FC<FakturowniaSettingsProps> = ({ settings }) => {
-    const [fields] = useFormData(settings);
 
-    return (<FormFields {...fields} />);
+    return (<Form controls={settings}>
+        <FormFields />
+    </Form>);
 }

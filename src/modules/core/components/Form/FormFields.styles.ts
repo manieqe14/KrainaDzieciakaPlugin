@@ -1,6 +1,6 @@
 import { styled } from '@mui/material';
 
-export const Form = styled('form')({
+export const StyledForm = styled('form')({
     display: 'flex',
     flexDirection: 'column'
 });
